@@ -1,8 +1,9 @@
 package com.example.diegov.myapplication;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -21,10 +22,10 @@ public class MainActivity extends AppCompatActivity {
         myToast.show();
     }
 
+    @SuppressLint("SetTextI18n")
     public void countMe (View view) {
         // Get the text view
-        TextView showCountTextView =
-                (TextView) findViewById(R.id.textView);
+        TextView showCountTextView = findViewById(R.id.textView);
 
         // Get the value of the text view
         String countString = showCountTextView.getText().toString();
@@ -42,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         Intent randomIntent = new Intent(this, SecondActivity.class);
 
         // Get the text view that shows the count
-        TextView showCountTextView = (TextView) findViewById(R.id.textView);
+        TextView showCountTextView = findViewById(R.id.textView);
 
         // Get the value of the text view
         String countString = showCountTextView.getText().toString();
@@ -56,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
         // Start the new activity
         startActivity(randomIntent);
     }
+
 
 
 }
